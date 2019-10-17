@@ -186,17 +186,13 @@ private DefaultTableModel tabmodelist;
 
         radioGroupAlfabet = new javax.swing.ButtonGroup();
         radioGroupTanggal = new javax.swing.ButtonGroup();
-        frameMove = new javax.swing.JLabel();
-        Icon = new javax.swing.JLabel();
         pBurgerMenu = new javax.swing.JPanel();
         tExit = new javax.swing.JLabel();
         tLogOut = new javax.swing.JLabel();
         tAbout = new javax.swing.JLabel();
         tOpenSettings = new javax.swing.JLabel();
         burgerItems = new javax.swing.JLabel();
-        burgerMenu = new javax.swing.JLabel();
-        descTxt = new javax.swing.JLabel();
-        txtTime = new javax.swing.JLabel();
+        Icon = new javax.swing.JLabel();
         tDahsboard = new javax.swing.JLabel();
         tVM = new javax.swing.JLabel();
         tReport = new javax.swing.JLabel();
@@ -273,11 +269,13 @@ private DefaultTableModel tabmodelist;
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         bg2 = new javax.swing.JLabel();
+        txtTime = new javax.swing.JLabel();
+        descTxt = new javax.swing.JLabel();
         menuReport = new javax.swing.JLabel();
+        burgerMenu = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("WALACH LIST");
-        setUndecorated(true);
         setResizable(false);
         addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -290,25 +288,6 @@ private DefaultTableModel tabmodelist;
             }
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        frameMove.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseDragged(java.awt.event.MouseEvent evt) {
-                frameMoveMouseDragged(evt);
-            }
-        });
-        frameMove.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                frameMoveMouseClicked(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                frameMoveMousePressed(evt);
-            }
-        });
-        getContentPane().add(frameMove, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 860, 30));
-
-        Icon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplikasimanajementugas/image/Icon.png"))); // NOI18N
-        getContentPane().add(Icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, 30));
 
         pBurgerMenu.setOpaque(false);
         pBurgerMenu.setLayout(null);
@@ -366,26 +345,11 @@ private DefaultTableModel tabmodelist;
         pBurgerMenu.add(burgerItems);
         burgerItems.setBounds(0, 0, 201, 182);
 
-        getContentPane().add(pBurgerMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 40, 200, 180));
+        getContentPane().add(pBurgerMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 110, 200, 180));
 
-        burgerMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        burgerMenu.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                burgerMenuMouseClicked(evt);
-            }
-        });
-        getContentPane().add(burgerMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 0, 30, 30));
-
-        descTxt.setBackground(new java.awt.Color(255, 255, 255));
-        descTxt.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        descTxt.setForeground(new java.awt.Color(153, 153, 153));
-        descTxt.setText("Hallo " + currUser);
-        getContentPane().add(descTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 40, 220, 60));
-
-        txtTime.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        txtTime.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txtTime.setText("HH:MM");
-        getContentPane().add(txtTime, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 0, 60, 30));
+        Icon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplikasimanajementugas/image/Icon.png"))); // NOI18N
+        getContentPane().add(Icon, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, 30));
 
         tDahsboard.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         tDahsboard.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -906,8 +870,27 @@ private DefaultTableModel tabmodelist;
         bg2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplikasimanajementugas/image/main-report.png"))); // NOI18N
         pReport.add(bg2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, -1, -1));
 
+        txtTime.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtTime.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtTime.setText("HH:MM");
+        pReport.add(txtTime, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 50, 60, 30));
+
+        descTxt.setBackground(new java.awt.Color(255, 255, 255));
+        descTxt.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        descTxt.setForeground(new java.awt.Color(153, 153, 153));
+        descTxt.setText("Hallo " + currUser);
+        pReport.add(descTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 50, 160, 40));
+
         menuReport.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplikasimanajementugas/image/menu-report.png"))); // NOI18N
         pReport.add(menuReport, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, -1, -1));
+
+        burgerMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        burgerMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                burgerMenuMouseClicked(evt);
+            }
+        });
+        pReport.add(burgerMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 50, 30, 30));
 
         panelLayar.add(pReport, "card2");
 
@@ -1048,30 +1031,10 @@ private DefaultTableModel tabmodelist;
         }
     }//GEN-LAST:event_tSimpanActionPerformed
 
-    private void frameMoveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_frameMoveMouseClicked
-        // TODO add your handling code here:
-          
-    }//GEN-LAST:event_frameMoveMouseClicked
-
-    private void frameMoveMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_frameMoveMouseDragged
-        // TODO add your handling code here:
-        
-          int mousex = evt.getXOnScreen();
-        int mousey = evt.getYOnScreen();
-        
-        this.setLocation(mousex - x, mousey - y);
-    }//GEN-LAST:event_frameMoveMouseDragged
-
     private void tDahsboardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tDahsboardMouseClicked
         // TODO add your handling code here
         gantiPanel(pDashboard);
     }//GEN-LAST:event_tDahsboardMouseClicked
-
-    private void frameMoveMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_frameMoveMousePressed
-        // TODO add your handling code here:
-         x = evt.getX();
-        y = evt.getY();
-    }//GEN-LAST:event_frameMoveMousePressed
 
     private void burgerMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_burgerMenuMouseClicked
         // TODO add your handling code here:
@@ -1538,7 +1501,6 @@ System.out.println(e);
     private com.toedter.calendar.JDateChooser dateTarget;
     private javax.swing.JLabel descTxt;
     private javax.swing.JLabel frame;
-    private javax.swing.JLabel frameMove;
     private javax.swing.JTextArea isiMemo;
     private javax.swing.JTextArea isiMemoEdit;
     private javax.swing.JButton jButton1;
